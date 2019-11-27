@@ -9,4 +9,5 @@ source 'https://rubygems.org' do
   gem 'sinatra-param'
   gem 'pry'
   gem 'pry-remote'
+  gem 'pg'
 end
