@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<body>
+    <div class="container">
+    <h3 class="center">Sistemas Distribuidos - Taller Cloud</h3>
+
+    <h4 class="center">Web Services</h4>
+        <p >Se listaran y describirán cada uno de los endpoints de la API, junto con sus parámetros, tipo y descripción: </p>
+
+</h4>
+    <p >
+        Endpoint: GET /employees Devuelve todos los empleados.
+    </p>
+    <p >
+        Endpoint: GET /employee/:id Devuelve el empleado solicitado
+    </p>
+    <div >
+        <table>
+            <colgroup>
+                <col width="152" />
+                <col width="80" />
+                <col width="218" />
+                <col width="152" />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>
+                        <p >
+                            Parametro
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Tipo
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Descripción
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Obligatorio?
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p >
+                            id
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Integer
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            El ID del empleado buscado
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Si
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <p >
+        Endpoint: POST /employee Inserta un empleado nuevo a la base de datos.
+    </p>
+    <div >
+        <table>
+            <colgroup>
+                <col width="*" />
+                <col width="80" />
+                <col width="218" />
+                <col width="*" />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>
+                        <p >
+                            Parametro
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Tipo
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Descripción
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Obligatorio?
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p >
+                            firtst_name
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            String
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Nombre del empleado
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Si
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p >
+                            surname
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            String
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Apellido del empleado
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Si
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p >
+                            email
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            String
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Email del empleado, es un dato ÚNICO, no puede tenerlo
+                            otro empleado
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Si
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p >
+                            password
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            String
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Contraseña del empleado
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Si
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p >
+                            employee_type
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Integer
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Id del tipo de empleado
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Si
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <p >
+        Endpoint: PUT /employee/:id Actualiza un empleado de la base de datos.
+    </p>
+    <div >
+        <table>
+            <colgroup>
+                <col width="*" />
+                <col width="80" />
+                <col width="218" />
+                <col width="*" />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>
+                        <p >
+                            Parametro
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Tipo
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Descripción
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Obligatorio?
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p >
+                            id
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Integer
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            El ID del empleado buscado
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Si
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p >
+                            firtst_name
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            String
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Nombre del empleado
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Si
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p >
+                            surname
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            String
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Apellido del empleado
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Si
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p >
+                            password
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            String
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Contraseña del empleado
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Si
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p >
+                            employee_type
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Integer
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Id del tipo de empleado
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Si
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p >
+        *El email no es modificable.
+    </p>
+    <br />
+    <p >
+        Endpoint: DELETE /employee/:id Borra el empleado especificado
+    </p>
+    <div >
+        <table>
+            <colgroup>
+                <col width="*" />
+                <col width="87" />
+                <col width="211" />
+                <col width="*" />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>
+                        <p >
+                            Parametro
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Tipo
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Descripción
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Obligatorio?
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p >
+                            id
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Integer
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            El ID del empleado buscado
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Si
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <p >
+        Endpoint: GET /employee-types Devuelve todos los tipos empleados.
+    </p>
+    <br />
+    <p >
+        Endpoint: GET /employee-type/:id Devuelve el tipo de empleado solicitado.
+    </p>
+    <div >
+        <table>
+            <colgroup>
+                <col width="152" />
+                <col width="80" />
+                <col width="218" />
+                <col width="152" />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>
+                        <p >
+                            Parametro
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Tipo
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Descripción
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Obligatorio?
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p >
+                            id
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Integer
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            El ID del tipo de empleado buscado
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Si
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <p >
+        Endpoint: POST /employee-type Inserta un tipo empleado nuevo a la base de
+        datos.
+    </p>
+    <div >
+        <table>
+            <colgroup>
+                <col width="*" />
+                <col width="80" />
+                <col width="218" />
+                <col width="*" />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>
+                        <p >
+                            Parametro
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Tipo
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Descripción
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Obligatorio?
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p >
+                            initials
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            String
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Iniciales del tipo de empleado
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Si
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p >
+                            description
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            String
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Descripción del tipo de empleado
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Si
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <p >
+        Endpoint: PUT /employee-type/:id Actualiza un tipo empleado de la base de
+        datos.
+    </p>
+    <div >
+        <table>
+            <colgroup>
+                <col width="*" />
+                <col width="80" />
+                <col width="218" />
+                <col width="*" />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>
+                        <p >
+                            Parametro
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Tipo
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Descripción
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Obligatorio?
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p >
+                            id
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Integer
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            El ID del tipo empleado buscado
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Si
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p >
+                            initials
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            String
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Iniciales del tipo de empleado
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Si
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p >
+                            description
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            String
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Descripción del tipo de empleado
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Si
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <p >
+        Endpoint: DELETE /employee-type/:id Borra el tipo empleado especificado
+    </p>
+    <div >
+        <table>
+            <colgroup>
+                <col width="*" />
+                <col width="87" />
+                <col width="211" />
+                <col width="*" />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>
+                        <p >
+                            Parametro
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Tipo
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Descripción
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Obligatorio?
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p >
+                            id
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Integer
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            El ID del tipo de empleado buscado
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Si
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <p >
+        Endpoint: GET /employee-by-type/:typeId Devuelve todos los empleados del
+        tipo solicitado.
+    </p>
+    <div >
+        <table>
+            <colgroup>
+                <col width="*" />
+                <col width="78" />
+                <col width="220" />
+                <col width="*" />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>
+                        <p >
+                            Parametro
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Tipo
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Descripción
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Obligatorio?
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p >
+                            typeId
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Integer
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            El ID del tipo de empleado buscado
+                        </p>
+                    </td>
+                    <td>
+                        <p >
+                            Si
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+
+</html>
