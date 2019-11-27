@@ -5,16 +5,18 @@ require "sinatra/param"
 require "json"
 require "./model/employee"
 require "./model/employee_type"
+require 'active_record'
+require './environments'
 
-set :database_file, 'config/db.yml'
+#set :database_file, 'config/db.yml'
 set :show_exceptions, false
 set :raise_errors, false
 
 error   do
  env['sinatra.error']
-end 
+end
 
-error 404 do 
+error 404 do
   'No existe la ruta'.to_json
 end
 
@@ -38,7 +40,7 @@ get '/' do
 end
 
 get '/employees' do
-  
+
   Employee.all.to_json(:include=>:employee_type)
 end
 
@@ -46,7 +48,7 @@ get '/employee/:id' do
   param :id, Integer, required: true, message: "no"
   if Employee.exists?(params['id'])
     Employee.find(params['id']).to_json(:except => 'password')
-  else 
+  else
    "No existe el empleado con el ID #{params['id']}".to_json
   end
 end
@@ -70,10 +72,10 @@ post '/employee' do
   param :email, String, required: true, format: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i, message: 'Formato de mail invalido'
   param :password, String, required: true
   param :employee_type_id, Integer, required: true
-  
- 
+
+
   employee = Employee.create(params.slice(:first_name,:surname,:email,:password,:employee_type_id))
-  if employee.valid? 
+  if employee.valid?
     employee.to_json
   else
     employee.errors.to_json
@@ -125,7 +127,7 @@ end
 post '/employee-type' do
   param :initials, String, required: true
   param :description, String, required: true
-  
+
   EmployeeType.create(params.slice(:initials,:description)).to_json
 end
 
@@ -159,13 +161,13 @@ end
 post '/login' do
   param :email, String, required: true
   param :password, String, required: true
-  
+
   emp = Employee.where("email = ? AND password = ?", params['email'], params['password'])
 
   if emp.empty?
     {"success" => "false", "message" => "Las credenciales son inválidas"}.to_json
-  else 
+  else
     {"success" => "true", "message" => "Las credenciales son válidas"}.to_json
   end
-    
+
 end
