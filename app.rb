@@ -6,7 +6,7 @@ require "json"
 require "./model/employee"
 require "./model/employee_type"
 require 'active_record'
-require './config/environments'
+require './config/environment'
 
 #set :database_file, 'config/db.yml'
 set :show_exceptions, false
