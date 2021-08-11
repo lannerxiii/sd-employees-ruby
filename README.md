@@ -27,15 +27,6 @@ ruby app.rb
 
 Ingresar a http://localhost: puerto que diga la consola al ejecutar el comando anterior
 
-## Problemas de conexión a MySQL por el método de autenticación
-Las credenciales son de ejemplo
-```
-mysql> mysql -u root -p
-mysql> use mysql;
-mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'very_strong_password';
-mysql> GRANT ALL PRIVILEGES ON *.* TO 'administrator'@'localhost' IDENTIFIED BY 'very_strong_password';
-```
-
 
 ## Problemas con base de datos
 
